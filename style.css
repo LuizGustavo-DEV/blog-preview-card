@@ -70,7 +70,6 @@ ol[role="list"] {
 
 /* Set core body defaults */
 body {
-  block-size: 100%;
   min-block-size: 100%;
 
   font-family: "Figtree", sans-serif;
@@ -83,7 +82,7 @@ body {
   align-items: center;
   justify-content: center;
   grid-auto-columns: min(24rem, 100%);
-  padding-inline: var(--space-600);
+  padding: var(--space-600);
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -106,9 +105,12 @@ h4 {
 }
 
 /* A elements that don't have a class get default styles */
+a {
+  color: inherit;
+}
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: currentColor;
 }
 
 /* Make images easier to work with */
@@ -144,6 +146,11 @@ h3 {
   color: var(--color-neutral-900);
 }
 
+footer {
+  padding-inline: var(--space-500);
+  padding-block: var(--space-300);
+}
+
 /* Composition */
 .flow {
   display: flex;
@@ -169,6 +176,10 @@ h3 {
 
 .background-neutral-100 {
   background-color: var(--color-neutral-100);
+}
+
+.color-neutral-100 {
+  color: var(--color-neutral-100);
 }
 
 .color-neutral-900 {
@@ -215,6 +226,10 @@ h3 {
   align-self: stretch;
 }
 
+.text-decoration-none {
+  text-decoration: none;
+}
+
 /* Block */
 .card {
   border: 0.0625rem solid var(--color-neutral-900);
@@ -222,8 +237,17 @@ h3 {
 }
 
 .card .image {
+  min-inline-size: 100%;
   object-fit: cover;
   block-size: 12.5rem;
+}
+
+.card .title {
+  transition: color 0.2s ease-in-out;
+}
+
+.card:hover .title {
+  color: var(--color-primary-400);
 }
 
 .avatar {

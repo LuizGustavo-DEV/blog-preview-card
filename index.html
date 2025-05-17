@@ -22,45 +22,69 @@
     <title>Frontend Mentor | Blog preview card</title>
   </head>
   <body class="background-primary-400">
-    <article
-      class="[ card ] [ flow ] [ background-neutral-100 padding-500 border-radius-500 ]"
-      style="--flow-space: var(--space-300)"
-    >
-      <img
-        class="[ image ] [ border-radius-500 align-self-stretch margin-block-end-600 ]"
-        src="./assets/images/illustration-article.svg"
-        alt=""
-      />
-      <span
-        class="border-radius-50 background-primary-400 padding-block-50 padding-inline-100 font-size-300 color-neutral-900 font-weight-800"
-        >Learning</span
+    <main>
+      <article
+        class="[ card ] [ background-neutral-100 border-radius-500 ]"
+        style="--flow-space: var(--space-300)"
       >
-      <time
-        class="font-size-300 color-neutral-900"
-        datetime=""
-        >Published 21 Dec 2023</time
-      >
-      <h3>HTML & CSS foundations</h3>
-      <p>
-        These languages are the backbone of every website, defining structure,
-        content, and presentation.
-      </p>
-      <div
-        class="[ flex-row ] [ margin-block-start-600 ]"
-        style="--flex-row-gap: var(--space-300)"
-      >
-        <img
-          class="avatar"
-          src="./assets/images/image-avatar.webp"
-          alt=""
-          aria-labelledby="author-1"
-        />
-        <span
-          class="font-size-300 color-neutral-900 font-weight-800"
-          id="author-1"
-          >Greg Hooper</span
+        <a
+          class="[ flow ] [ text-decoration-none padding-500 ]"
+          href="#"
         >
-      </div>
-    </article>
+          <img
+            class="[ image ] [ border-radius-500 align-self-stretch margin-block-end-600 ]"
+            src="./assets/images/illustration-article.svg"
+            alt=""
+          />
+          <span
+            class="border-radius-50 background-primary-400 padding-block-50 padding-inline-100 font-size-300 color-neutral-900 font-weight-800"
+          >
+            Learning
+          </span>
+          <time
+            class="font-size-300 color-neutral-900"
+            datetime=""
+          >
+            Published 21 Dec 2023
+          </time>
+          <h3 class="title">HTML & CSS foundations</h3>
+          <p>
+            These languages are the backbone of every website, defining
+            structure, content, and presentation.
+          </p>
+          <div
+            class="[ flex-row ] [ margin-block-start-600 ]"
+            style="--flex-row-gap: var(--space-300)"
+          >
+            <img
+              class="avatar"
+              src="./assets/images/image-avatar.webp"
+              alt="Author"
+            />
+            <span class="font-size-300 color-neutral-900 font-weight-800">
+              Greg Hooper
+            </span>
+          </div>
+        </a>
+      </article>
+    </main>
+
+    <footer
+      class="[ flow ] [ color-neutral-900 ]"
+      style="--flow-space: 0.5em"
+    >
+      <span>
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >.
+      </span>
+      <span>
+        Coded by
+        <a href="https://github.com/LuizGustavo-DEV">LuizGustavo-DEV</a>.
+      </span>
+    </footer>
   </body>
 </html>
