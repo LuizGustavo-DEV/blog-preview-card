@@ -1,0 +1,24 @@
+:root {
+  --color-primary: #f4d04e;
+
+  --color-gray-950: #111111;
+  --color-gray-500: #6b6b6b;
+
+  --color-white: #ffffff;
+
+  --ratio: 1.25;
+
+  --font-size--1: clamp(0.7rem, 0.6545rem + 0.1939vw, 0.8rem);
+  --font-size-base: clamp(0.875rem, 0.8182rem + 0.2424vw, 1rem);
+  --font-size-1: clamp(1.0938rem, 1.0227rem + 0.303vw, 1.25rem);
+  --font-size-2: clamp(1.3672rem, 1.2784rem + 0.3788vw, 1.5625rem);
+  --font-size-3: clamp(1.709rem, 1.598rem + 0.4735vw, 1.9531rem);
+
+  --space--4: calc(var(--space--3) / var(--ratio));
+  --space--3: calc(var(--space--2) / var(--ratio));
+  --space--2: calc(var(--space--1) / var(--ratio));
+  --space--1: calc(var(--space-base) / var(--ratio));
+  --space-base: 1rem;
+  --space-1: calc(var(--space-base) * var(--ratio));
+  --space-2: calc(var(--space-1) * var(--ratio));
+}

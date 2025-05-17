@@ -1,0 +1,5 @@
+.avatar {
+  border-radius: 50%;
+  max-block-size: 2rem;
+  max-inline-size: 2rem;
+}

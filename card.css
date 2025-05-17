@@ -1,0 +1,7 @@
+.card {
+  border: 0.0625rem solid var(--color-gray-950);
+  border-radius: var(--space-1);
+  max-inline-size: 24rem;
+  padding: var(--space-2);
+  box-shadow: 0.5rem 0.5rem 0 #000000;
+}

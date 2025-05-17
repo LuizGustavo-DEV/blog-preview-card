@@ -1,34 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Blog preview card</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="reset.css"
+    />
 
-  Learning
+    <link
+      rel="stylesheet"
+      href="variables.css"
+    />
 
-  Published 21 Dec 2023
+    <link
+      rel="stylesheet"
+      href="utilities.css"
+    />
 
-  HTML & CSS foundations
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
 
-  These languages are the backbone of every website, defining structure, content, and presentation.
+    <link
+      rel="stylesheet"
+      href="card.css"
+    />
 
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <link
+      rel="stylesheet"
+      href="avatar.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="tag.css"
+    />
+
+    <title>Frontend Mentor | Blog preview card</title>
+  </head>
+  <body class="font-size:base color:gray bg:primary">
+    <main class="wrapper cover">
+      <article
+        class="card flow cover-centered center bg:white"
+        style="--flow-space: var(--space--1)"
+      >
+        <img
+          class="border-radius:1 mbe-2"
+          src="./assets/images/illustration-article.svg"
+          alt=""
+        />
+        <span class="tag"><b>Learning</b></span>
+        <time
+          class="font-size:-1 color:dark"
+          datetime="2023-12-21"
+          >Published 21 Dec 2023</time
+        >
+        <h2 class="font-size:2 color:dark">HTML & CSS foundations</h2>
+        <p>
+          These languages are the backbone of every website, defining structure,
+          content, and presentation.
+        </p>
+        <span
+          class="cluster mbs-2 font-size:-1 color:dark"
+          style="--cluster-space: var(--space--1)"
+        >
+          <img
+            class="avatar"
+            src="./assets/images/image-avatar.webp"
+            alt=""
+          />
+          <b>Greg Hooper</b>
+        </span>
+      </article>
+    </main>
+    <footer>
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </footer>
+  </body>
 </html>

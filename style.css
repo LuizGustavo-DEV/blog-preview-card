@@ -1,0 +1,60 @@
+main {
+  min-block-size: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  display: block;
+  margin-inline: auto;
+  max-inline-size: 75rem;
+  padding-inline: var(--space-base);
+}
+
+.flow {
+  --flow-space: var(--space-base, 1em);
+
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.flow > * {
+  margin-block-end: 0;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space);
+}
+
+.center {
+  margin-inline: auto;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+}
+
+.cover > .cover-centered {
+  margin-block: auto;
+}
+
+.cover > :first-child(:not(.cover-centered)) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child(:not(.cover-centered)) {
+  margin-block-end: 0;
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: var(--cluster-alignment, center);
+  gap: var(--cluster-space, 1rem);
+}
