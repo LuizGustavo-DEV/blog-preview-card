@@ -1,60 +1,232 @@
-main {
-  min-block-size: 100vh;
+@font-face {
+  font-family: "Figtree";
+  src: url(./assets/fonts/Figtree-VariableFont_wght.ttf) format("truetype");
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --color-primary-400: hsl(47, 88%, 63%);
+
+  --color-neutral-100: hsl(0, 0%, 100%);
+  --color-neutral-400: hsl(0, 0%, 42%);
+  --color-neutral-900: hsl(0, 0%, 7%);
+
+  /* @link https://utopia.fyi/type/calculator?c=375,14,1.25,1440,16,1.25,2,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+  --font-size-300: clamp(0.7rem, 0.6648rem + 0.1502vw, 0.8rem);
+  --font-size-400: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+  --font-size-500: clamp(1.0938rem, 1.0387rem + 0.2347vw, 1.25rem);
+  --font-size-600: clamp(1.3672rem, 1.2984rem + 0.2934vw, 1.5625rem);
+
+  --ratio: 1.25;
+
+  --space-50: calc(var(--space-75) / var(--ratio));
+  --space-75: calc(var(--space-100) / var(--ratio));
+  --space-100: calc(var(--space-200) / var(--ratio));
+  --space-200: calc(var(--space-300) / var(--ratio));
+  --space-300: calc(var(--space-400) / var(--ratio));
+  --space-400: 1rem;
+  --space-500: calc(var(--space-400) * var(--ratio));
+  --space-600: calc(var(--space-500) * var(--ratio));
+
+  --font-weight-400: 500;
+  --font-weight-800: 800;
 }
 
-.wrapper {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
+  block-size: 100%;
+  min-block-size: 100%;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  block-size: 100%;
+  min-block-size: 100%;
+
+  font-family: "Figtree", sans-serif;
+  font-weight: var(--font-weight-400);
+  line-height: 1.5;
+  color: var(--color-neutral-400);
+
+  /* For the sake of the demo */
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-auto-columns: min(24rem, 100%);
+  padding-inline: var(--space-600);
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
   display: block;
-  margin-inline: auto;
-  max-inline-size: 75rem;
-  padding-inline: var(--space-base);
 }
 
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-block-size: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+h3 {
+  font-size: var(--font-size-600);
+  font-weight: var(--font-weight-800);
+  line-height: 1.5;
+  color: var(--color-neutral-900);
+}
+
+/* Composition */
 .flow {
-  --flow-space: var(--space-base, 1em);
-
   display: flex;
-  flex-flow: column;
-  justify-content: flex-start;
-  align-items: baseline;
-}
-
-.flow > * {
-  margin-block-end: 0;
+  flex-direction: column;
+  align-items: var(--flow-alignment, start);
 }
 
 .flow > * + * {
-  margin-block-start: var(--flow-space);
+  margin-block-start: var(--flow-space, 1rem);
 }
 
-.center {
-  margin-inline: auto;
-}
-
-.cover {
+.flex-row {
   display: flex;
-  flex-direction: column;
+  gap: var(--flex-row-gap, 1rem);
+  align-items: var(--flex-row-alignment, center);
+  justify-content: var(--flex-row-justification, flex-start);
 }
 
-.cover > .cover-centered {
-  margin-block: auto;
+/* Utility */
+.background-primary-400 {
+  background-color: var(--color-primary-400);
 }
 
-.cover > :first-child(:not(.cover-centered)) {
-  margin-block-start: 0;
+.background-neutral-100 {
+  background-color: var(--color-neutral-100);
 }
 
-.cover > :last-child(:not(.cover-centered)) {
-  margin-block-end: 0;
+.color-neutral-900 {
+  color: var(--color-neutral-900);
 }
 
-.cluster {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: var(--cluster-alignment, center);
-  gap: var(--cluster-space, 1rem);
+.font-size-300 {
+  font-size: var(--font-size-300);
+}
+
+.font-weight-800 {
+  font-weight: var(--font-weight-800);
+}
+
+.border-radius-50 {
+  border-radius: var(--space-50);
+}
+
+.border-radius-500 {
+  border-radius: var(--space-500);
+}
+
+.padding-block-50 {
+  padding-block: var(--space-50);
+}
+
+.padding-inline-100 {
+  padding-inline: var(--space-100);
+}
+
+.padding-500 {
+  padding: var(--space-500);
+}
+
+.margin-block-start-600 {
+  margin-block-start: var(--space-600);
+}
+
+.margin-block-end-600 {
+  margin-block-end: var(--space-600);
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+/* Block */
+.card {
+  border: 0.0625rem solid var(--color-neutral-900);
+  box-shadow: 0.5rem 0.5rem 0 var(--color-neutral-900);
+}
+
+.card .image {
+  object-fit: cover;
+  block-size: 12.5rem;
+}
+
+.avatar {
+  block-size: 2rem;
+  inline-size: 2rem;
 }
